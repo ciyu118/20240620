@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>寒夏の新天地</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body,html{
+            height: 100%;
+            width: 100%;
+        }
+        .header{
+            background-image: url(./image/初音01.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+        }
+        .navitem{
+            background: #C8457A;
+            border: 1px solid #C8457A;
+            padding: 5px;
+            text-align: center;
+            color: #ede6e6;
+            font-size: 1.3rem;
+            flex-basis: 100%;
+            cursor: pointer;
+        }
+        .nav{
+            display: flex;
+            justify-content: space-around;
+            position:sticky;
+            top: 0;
+        }
+		.introduction{
+			color: #FFFFFF;
+			margin-left: 25px;
+		
+		}
+		.r1{
+			margin-left: 25px;
+			line-height: 1.5;
+		}
+		 
+		
+        main{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width:70%;
+            background-color: #A82D57;
+            border: 1px solid #FFD1D1;
+            float: left;
+        }
+        picture{
+            display: flex;
+            width:100%;
+            background-color: #F46696;
+            border: 10px solid #FFD1D1;
+            display: flex;
+            height: 40%;
+            justify-content: center;
+            align-items: center;
+        }
+        introduction{
+            display: flex;
+            width:100%;
+            border: 1px solid #FFD1D1;
+            height: 60%;
+        }
+        aside{
+            display: flex;
+            height: 100%;
+            width: 30%;
+            float:right;
+			background-color: #A82D57;
+			color: #FFFFFF;
+            border: 1px solid #FFD1D1;
+			
+        }
+        footer{
+            clear: both;
+			background-color: #FFD1D1;
+            border: 1px solid #FFD1D1;
+            height: 10%;
+            padding: 20px;
+            text-align: center;
+        }
+        .d1 {
+            display: flex;
+            justify-content: center; 
+        }
+        .d1 a {
+            margin:0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><img src="images/初音01.jpg" width="100%"></div>
+    <div class="nav">
+        <div class="navitem" id="navitem01">個人資料</div>
+        <div class="navitem" id="navitem02">推坑</div>
+        <div class="navitem" id="navitem03">作品</div>
+    </div>
+	
+    <main id="mainContent">
+        <picture>
+            <img src="images/人.jpg" width="30%">
+        </picture>
+        <div data-aos="fade-right"><div class="introduction">
+           <p style="font-size: 40px;">『早ㄢ』</p><br><br>
+			<p style="font-size: 20px;">
+			我叫洪巧芸/冷冷/冷夏!要叫什麼都可以，隨意<br>
+			只要知道是在叫我就好，暱稱自取</p> <br>-------------------------------------------------------------------------------<br>
+			<p style="font-size: 40px;">『關於我』</p><br>	
+				
+			<p style="font-size: 20px;">05 <br>
+			19y<br>
+			生日是1月18日<br>
+			新北  INFP<br>
+			學生黨<br>
+			喜歡畫畫，常常跑去看美圖<br>
+			很內向，但熟起來會變瘋子體質<br><br>--------------------------------------------------------------<br></p>
+			<p style="font-size: 40px;">歡迎來認識我!</p>
+
+        </div></div>
+		
+    </main>
+ 
+    <aside id="asideContent">
+		<div class="r1">
+        <p style="font-size: 40px;">『遊戲坑』</p><br><br>
+			<p style="font-size: 30px;">世界計畫(台/日)<br>
+			光遇(國際)<br>
+			寵物島<br>
+			明日方舟(台)<br>
+			傳說對決<br>
+			雀魂麻將<br>
+			麥快<br>
+			</p>
+		
+		</div>
+    </aside>
+    <footer>
+		<div class="d1">
+        <a href="https://www.facebook.com/profile.php?id=100043599998061"><img src="images/FB.webp"  width="40" height="40"></a>
+		<a href="https://www.instagram.com/yun._.150/"><img src="images/ig.png"  width="40" height="40"></a>
+		<a href="https://x.com/cloudsun118"><img src="images/x.png"  width="40" height="40"></a>
+		</div>
+    </footer>
+
+    <script>
+    // 獲取需要動態改變的元素
+    const mainContent = document.getElementById('mainContent');
+    const asideContent = document.getElementById('asideContent');
+
+    // 獲取導航項目元素
+    const navitem01 = document.getElementById('navitem01');
+    const navitem02 = document.getElementById('navitem02');
+    const navitem03 = document.getElementById('navitem03');
+
+    // 預設顯示個人資料
+    showPersonalInfo();
+
+    // 添加點擊事件監聽器
+    navitem01.addEventListener('click', showPersonalInfo);
+    navitem02.addEventListener('click', showInterest);
+    navitem03.addEventListener('click', showWorks);
+
+    // 顯示個人資料的函數
+    function showPersonalInfo() {
+        mainContent.innerHTML = `
+            <picture>
+                <div data-aos="zoom-in-down"><img src="images/人.jpg" width="140%"> </div> 
+            </picture>
+            <div data-aos="fade-right"><div class="introduction">
+
+<br>
+                <p style="font-size: 40px;">°｡⋆ 早安 ｡°◌ .</p><br><br>
+                <p style="font-size: 25px;">
+                     我叫洪巧芸/冷冷/冷夏 ! 要叫什麼都可以，隨意叫，只要知道是在叫我就好，有禮貌，暱稱自取
+                </p>
+                <br><br>
+                <p style="font-size: 40px;"> °｡⋆ 關於我 ｡°◌ .</p><br> 
+                <p style="font-size: 25px;">| 05<br>
+                    | 19y<br>
+                    | 生日是1月18日<br>
+                    | 新北  INFP<br>
+                    | 學生黨<br>
+                    | 喜歡畫畫，常常跑去看美圖<br>
+                    | 很內向，但熟起來會變瘋子體質
+                </p>
+                <br>
+                <p style="font-size: 40px;">歡迎來認識我!!!!!</p></div>
+            </div>
+        `;
+        asideContent.innerHTML = `
+            <div data-aos="fade-right"><div class="r1"><br><br>
+                <p style="font-size: 40px;">➾ °｡⋆ 遊戲坑 ｡°◌ .</p><br>
+                <p style="font-size: 30px;">世界計畫(台/日)<br>
+                    光遇(國際)<br>
+                    寵物島<br>
+                    明日方舟(台)<br>
+                    傳說對決<br>
+                    雀魂麻將<br>
+                    麥塊<br><br></div>
+<div data-aos="zoom-in"><img src="images/初音02.jpg" width="70%"></div>
+                </p>
+            </div>
+        `;
+    }
+
+    // 顯示興趣的函數
+    function showInterest() {
+        mainContent.innerHTML = `
+            
+            <div data-aos="fade-right"><div class="introduction">
+<br>
+                <p style="font-size: 40px;">『坑單』</p><br>
+<p style="font-size: 40px;">➾ °｡⋆ 韓漫 ｡°◌ .</p><br>
+                 <p style="font-size: 25px;">
+                     °｡⋆ 最愛 ｡°✩ .°
+                </p><br>
+                <p style="font-size: 20px;">
+                    我獨自升級 | 某天成為公主 | 今生我來當家主 | 反派角色只有死亡結局 | 穿越者的專屬特權 | 惡女出沒請小心 | 當個惡女輕鬆又愉快 |<br>
+                患上不出道就會死的病 | 殺死惡女 | 我把灰姑娘養得亭亭玉立 | 試著改變故事類型吧 | 請給我奶嘴 | 謝絕當鵲橋 | 我被反派撫養中 |
+                </p>
+                <br><br>
+                <img src="images/01.jpg" width="30%">
+                <img src="images/02.jpg" width="30%">
+                <img src="images/03.jpg" width="30%">
+                
+                <br><br>
+                <p style="font-size: 25px;">
+                     °｡⋆ 其他喜歡 ｡°✩ .°
+                </p><br>
+                <p style="font-size: 20px;">
+                    綠蔭之冠 | SSS級死而復生的獵人 | 通靈千金 | 我的縮小暴君 | 第一次成為受寵小女兒 | 無所不能的小松鼠 | 我想活下去 | 反派改造計畫 |<br>
+                天才詐欺犯的雙重身分 | 某個繼母的童話 | 我是名副其實的媽媽粉 | 兔子與黑豹的共生關係 | 冬城的寶北小戰俘 | 恐怖遊戲女僕生存 |<br>
+                夏洛特與五名得意門生 | 千金小姐想休息 | 爸爸，請跟我結婚! | 變成伯爵家的混混 | 如出一轍的女兒 | 過度稱職的養女 |
+                </p>
+            </div></div>
+        `;
+        asideContent.innerHTML =  `
+           <div data-aos="fade-right"> <div class="r1">
+                    <br><br><br>
+                <p style="font-size: 40px;">➾ °｡⋆ 動漫 ｡°◌ .</p><br>
+                   
+                <p style="font-size: 30px;">間諜家家酒<br>
+                    鬼滅之刃<br>
+                    國王排名<br>
+                    式守同學不只可愛而已<br>
+                    反派千金等級99<br>
+                    輝夜姬想讓人告白<br>
+                    殺戮的天使<br>
+                    影宅<br>
+                    冰菓<br>
+                    暗殺教室<br>
+                    名偵探柯南<br>
+                    關於我轉生變成史萊姆這檔事<br>
+                    想哭的我戴上貓的面具<br>
+                    一拳超人<br>
+                    狂賭之淵<br>
+                </p>
+            </div></div>
+        `;
+    }
+
+    // 顯示作品的函數
+    function showWorks() {
+        mainContent.innerHTML = `
+            
+            <div data-aos="fade-right"><div class="introduction">
+<br>
+                <p style="font-size: 40px;">『做過的作品』</p><br>
+<p style="font-size: 40px;">➾ °｡⋆ 電腦 ｡°◌ .</p><br>
+                 
+                <br>
+                <img src="images/A1海報設計-1.jpg" width="20%">
+                <img src="images/A1海報設計-2.jpg" width="20%">
+                <img src="images/A_展板_洪巧芸_411214128.jpg" width="20%">
+                
+                <br><br>
+                <p style="font-size: 25px;">
+                     °｡⋆ 其他手繪 ｡°✩ .°</p>
+                <img src="images/手繪01.png" width="20%">
+                <img src="images/手繪02.png" width="20%">
+                <img src="images/手繪03.png" width="30%">
+                <br>
+                
+            </div></div>
+        `;
+        asideContent.innerHTML = `
+            <div data-aos="fade-right"><div class="r1">
+                    <br><br><br>
+                <p style="font-size: 40px;">➾ °｡⋆ 會用的軟體 ｡°◌ .</p><br>
+                   
+                <p style="font-size: 30px;">
+                    Adobe Illustrator.<br>
+                    Adobe InDesign.<br>
+                    Adobe Premiere Pro.<br>
+                    Adobe Photoshop<br>
+                    Acrobat Pro<br>
+                    Dreamweaver<br>
+                    愛筆思畫<br>
+                    <br>
+                <p style="font-size: 40px;">➾ °｡⋆ 社交軟體 ｡°◌ .</p><br>
+                   
+                <p style="font-size: 30px;">
+                    Facebook<br>
+                    Instagram<br>
+                    line<br>
+                    X<br>
+                    Discord<br>
+                    Threads<br>
+                </p>
+            </div></div>
+        `;
+    }
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+  AOS.init();
+</script>
+</body>
+</html>
